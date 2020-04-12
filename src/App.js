@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import TextBox from './components/TextBox'
+import Player from './components/Player'
+import Enemy from './components/Enemy'
+
+import { useSelector } from 'react-redux'
+import EnemyBehavior from './components/EnemyBehavior';
+
+
 function App() {
+  const state = useSelector(state => state)
+  console.log(state)
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <TextBox />
+      <div className='battleContainer'>
+        <Player />
+        <Enemy />
+        <EnemyBehavior />
+      </div>
     </div>
   );
 }
 
 export default App;
+
+// using dispatch:
+// <button onClick={()=>dispatch(updateText('new guy'))}>add</button>
+// <button onClick={()=>dispatch(clearText())}>clear</button>
