@@ -31,12 +31,12 @@ function App() {
   return (
     <div className="App">
       <StageHandlers />
-      <TextBox />
-
+      
       <div className='battleContainer'>
         <Player />
         <Enemy />
       </div>
+      <TextBox />
 
       <div className='testBtns'>
         <button onClick={() => dispatch(enemyPresent())}>ENEMY PRESENTATION</button>
@@ -48,33 +48,10 @@ function App() {
         <button onClick={() => dispatch(enemyEffect())}>ENEMY EFFECT</button>
         <button onClick={() => dispatch(victory())}>VICTORY</button>
         <button onClick={() => dispatch(defeat())}>DEFEAT</button>
-
       </div>
+
     </div>
   );
 }
 
 export default App;
-
-// using dispatch:
-// <button onClick={()=>dispatch(updateText('new guy'))}>add</button>
-// <button onClick={()=>dispatch(clearText())}>clear</button>
-
-// STEPS:
-// set up each distinct stage of combat
-// refactor enemy behavior into own component if possible
-// create dispatchers for changing each combat stage
-// create useEffect handlers for combat stages
-// code organization/refactoring
-
-// ENEMY PRESENTATION
-
-// loop until enemy hp is 0:
-//   PLAYER DECIDE
-//   PLAYER ACTION
-//   PLAYER ACTION EFFECT
-//   ENEMY DECIDE
-//   ENEMY ACTION
-//   ENEMY ACTION EFFECT
-
-// PLAYER VICTORY

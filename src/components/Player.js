@@ -11,7 +11,7 @@ const Player = () => {
   const dispatch = useDispatch()
   const player = useSelector(state => state.player)
   const enemy = useSelector(state => state.enemy)
-  // const stage = useSelector(state => state.stage)
+  const stage = useSelector(state => state.stage)
 
   const handleAttack = (move) => {
     dispatch(updateText(`${player.name} used ${move.title}`))
@@ -40,12 +40,11 @@ const Player = () => {
       <p>health {player.currentHealth}/{player.health}</p>
       <img src={player.avatar} alt="" width='150px'/>
       <div className='movesContainer'>
-        {displayMoves()}
-        {/* {stage==='victory' ? 
-          <div className="victory">This guy is the winner.</div>
-          :
+        {stage==='playerDecide' ?
           displayMoves()
-        } */}
+          :
+          null
+        }
       </div>
     </div>
   )

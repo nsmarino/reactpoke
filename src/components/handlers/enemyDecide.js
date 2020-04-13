@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 
 import { useSelector, } from 'react-redux'
-// import { updateBehavior } from '../reducers/behaviorReducer'
 
 const EnemyDecide = () => {
   // const dispatch = useDispatch()
