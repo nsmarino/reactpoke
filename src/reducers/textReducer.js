@@ -8,8 +8,6 @@ const textReducer = (state = defaultState, action) => {
         case 'CLEAR_TEXT':
             const emptyString = ''
             return emptyString
-        case 'VICTORY':
-            return 'Cloud has gone and won it all.'
         default:
             return state
     }

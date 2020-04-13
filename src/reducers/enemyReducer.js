@@ -19,13 +19,6 @@ const updateEnemyHealth = (data) => {
     }
 }
 
-const killEnemy = () => {
-    return {
-        type: 'DIE'
-    }
-}
-
-
-export { updateEnemyHealth, killEnemy }
+export { updateEnemyHealth }
 
 export default enemyReducer

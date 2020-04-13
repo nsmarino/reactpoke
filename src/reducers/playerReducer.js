@@ -4,10 +4,11 @@ const defaultState = cloud
 
 const playerReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case 'PLAYER_IDLE':
-            return {...state, avatar: action.data}
-        case 'PLAYER_ATTACK':
-            return {...state, avatar: action.data}
+        case 'PLAYER_DECIDE':
+            return state
+            // return {...state, avatar: action.data}
+        case 'PLAYER_ACTION':
+            return state
         default:
             return state
     }
