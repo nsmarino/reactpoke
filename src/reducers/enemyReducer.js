@@ -4,17 +4,17 @@ const defaultState = villain
 
 const enemyReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case 'TAKE_DAMAGE':
+        case 'UPDATE_HEALTH':
             const updatedState = { ...state, currentHealth: action.data }
             return updatedState
         default:
-            return defaultState
+            return state
     }
 }
 
 const updateEnemyHealth = (data) => {
     return {
-        type: 'TAKE_DAMAGE',
+        type: 'UPDATE_HEALTH',
         data
     }
 }

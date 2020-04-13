@@ -1,14 +1,34 @@
 import React, { useEffect } from 'react'
 
-import { useSelector, } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { updateText } from '../../reducers/textReducer'
+
+import { updateEnemyHealth } from '../../reducers/enemyReducer'
+import { enemyDecide, victory } from '../../reducers/stageReducer'
+
 
 const PlayerEffect = () => {
-//   const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const stage = useSelector(state => state.stage)
+  const enemy = useSelector(state => state.enemy)
+  const action = useSelector(state => state.action)
   
   useEffect(() => {
     if (stage==='playerEffect') {
+
       console.log('handling player effect')
+      dispatch(updateText(`${action.title} struck for ${action.damage} damage`))
+
+      const newEnemyHealth = enemy.currentHealth - action.damage
+      if (newEnemyHealth===0) dispatch(victory())
+
+      else {
+        dispatch(updateEnemyHealth(newEnemyHealth))
+        setTimeout(() => dispatch(enemyDecide()), 3000)
+      }
+
+
     } // eslint-disable-next-line
   }, [stage])
 

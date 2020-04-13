@@ -10,13 +10,10 @@ const CloudDoc = {
         {
             title: 'Electric Shock',
             damage: 20,
-            order: 1,
         },
         {
             title: 'Fire Blast',
             damage: 10,
-            order: 2,
-        
         }
     ]
   }
