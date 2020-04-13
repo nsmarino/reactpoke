@@ -4,9 +4,11 @@ const defaultState = villain
 
 const enemyReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case 'UPDATE_HEALTH':
+        case 'UPDATE_ENEMY_HEALTH':
             const updatedState = { ...state, currentHealth: action.data }
             return updatedState
+        case 'CLEAR_ENEMY':
+            return null
         default:
             return state
     }
@@ -14,11 +16,17 @@ const enemyReducer = (state = defaultState, action) => {
 
 const updateEnemyHealth = (data) => {
     return {
-        type: 'UPDATE_HEALTH',
+        type: 'UPDATE_ENEMY_HEALTH',
         data
     }
 }
 
-export { updateEnemyHealth }
+const clearEnemy = () => {
+    return {
+        type: 'CLEAR_ENEMY'
+    }
+}
+
+export { updateEnemyHealth, clearEnemy }
 
 export default enemyReducer

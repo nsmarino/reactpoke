@@ -19,3 +19,14 @@
     padding: 1em;
     width: 10em;
 }
+
+.textContainer {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1em;
+    font-family: monospace;
+    font-size: 1.2em;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+}

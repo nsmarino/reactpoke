@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react'
 
-import { useSelector, } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { updateText } from '../../reducers/textReducer'
+// import { clearEnemy } from '../../reducers/enemyReducer'
 
 const Victory = () => {
-//   const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const stage = useSelector(state => state.stage)
+  const enemy = useSelector(state => state.enemy)
   
   useEffect(() => {
     if (stage==='victory') {
       console.log('handling victory')
+      dispatch(updateText(`${enemy.name} has been defeated`))
+      // dispatch(clearEnemy())
     } // eslint-disable-next-line
   }, [stage])
 

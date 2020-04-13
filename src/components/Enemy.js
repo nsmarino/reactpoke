@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux'
 // PRESENTATIONAL COMPONENT
 const Enemy = () => {
   const enemy = useSelector(state => state.enemy)
+  const stage = useSelector(state => state.stage)
+  if (stage === 'victory') return null
   return (
     <div className="enemyContainer">
       <h1>{enemy.name}</h1>

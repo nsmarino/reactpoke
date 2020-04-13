@@ -4,30 +4,21 @@ const defaultState = cloud
 
 const playerReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case 'PLAYER_DECIDE':
-            return state
-            // return {...state, avatar: action.data}
-        case 'PLAYER_ACTION':
-            return state
+        case 'UPDATE_PLAYER_HEALTH':
+            const updatedState = { ...state, currentHealth: action.data }
+            return updatedState
         default:
             return state
     }
 }
 
-const animateAttack = () => {
+const updatePlayerHealth = (data) => {
     return {
-        type: 'PLAYER_ATTACK',
-        data: 'test string',
+        type: 'UPDATE_PLAYER_HEALTH',
+        data
     }
 }
 
-const animateIdle = () => {
-    return {
-        type: 'PLAYER_IDLE',
-        data: 'test string',
-    }
-}
-
-export { animateAttack, animateIdle }
+export { updatePlayerHealth }
 
 export default playerReducer
