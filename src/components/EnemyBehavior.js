@@ -3,21 +3,23 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { updateBehavior } from '../reducers/behaviorReducer'
-import { enemyTurn } from '../reducers/modeReducer'
+import { enemyTurn } from '../reducers/stageReducer'
 
 const EnemyBehavior = () => {
   const dispatch = useDispatch()
 
   const behavior = useSelector(state => state.behavior)
   
-  const mode = useSelector(state => state.mode)
-
+  const stage = useSelector(state => state.stage)
+  
+  console.log('still alive')
   useEffect(() => {
-    if (mode==='enemyTurn') {
+    if (stage==='enemyTurn') {
+      console.log('handling enemy behavior')
       dispatch(updateBehavior('enemy used attack'))
       setTimeout(() => dispatch(updateBehavior('attack was successful')), 1500)
-    }
-  }, [mode])
+    } // eslint-disable-next-line
+  }, [stage])
 
   const showBehavior = () => behavior.map(b => <p key={b}>{b}</p>)
 
@@ -25,14 +27,13 @@ const EnemyBehavior = () => {
     dispatch(enemyTurn())
   }
 
-
-  return (
-      <div>
-        <button onClick={testBehavior}>test behavior</button>
-
-        {showBehavior()}
-      </div>
-  )
+  return null
+  // return (
+  //     <div>
+  //       <button onClick={testBehavior}>test behavior</button>
+  //       {showBehavior()}
+  //     </div>
+  // )
 }
 
 export default EnemyBehavior

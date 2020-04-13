@@ -5,14 +5,14 @@ import { createStore, combineReducers } from 'redux'
 import playerReducer from './reducers/playerReducer'
 import enemyReducer from './reducers/enemyReducer'
 import textReducer from './reducers/textReducer'
-import modeReducer from './reducers/modeReducer'
+import stageReducer from './reducers/stageReducer'
 import behaviorReducer from './reducers/behaviorReducer'
 
 const reducer = combineReducers({
     player: playerReducer,
     enemy: enemyReducer,
     text: textReducer,
-    mode: modeReducer,
+    stage: stageReducer,
     behavior: behaviorReducer,
   })
 

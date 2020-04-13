@@ -1,5 +1,5 @@
 
-const modeReducer = (state = 'idle', action) => {
+const stageReducer = (state = 'idle', action) => {
     switch (action.type) {
         case 'cloudAttack':
             return 'cloudAttack'
@@ -26,4 +26,4 @@ const enemyTurn = () => {
 
 export { victory, enemyTurn }
 
-export default modeReducer
+export default stageReducer
