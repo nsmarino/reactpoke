@@ -2,6 +2,9 @@
 const stageReducer = (state = 'enemyPresent', action) => {
     switch (action.type) {
 
+        case 'ENEMY_PRESENT':
+            return 'enemyPresent'
+
         case 'PLAYER_DECIDE':
             return 'playerDecide'
 
@@ -28,6 +31,30 @@ const stageReducer = (state = 'enemyPresent', action) => {
 
         default:
             return state
+    }
+}
+
+const enemyPresent = () => {
+    return {
+        type: 'ENEMY_PRESENT',
+    }
+}
+
+const playerDecide = () => {
+    return {
+        type: 'PLAYER_DECIDE',
+    }
+}
+
+const playerAction = () => {
+    return {
+        type: 'PLAYER_ACTION',
+    }
+}
+
+const playerEffect = () => {
+    return {
+        type: 'PLAYER_EFFECT',
     }
 }
 
@@ -62,6 +89,10 @@ const defeat = () => {
 }
 
 export {
+    enemyPresent,
+    playerDecide,
+    playerAction,
+    playerEffect,
     enemyDecide, 
     enemyAction, 
     enemyEffect, 

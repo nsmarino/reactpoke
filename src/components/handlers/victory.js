@@ -2,13 +2,13 @@ import React, { useEffect } from 'react'
 
 import { useSelector, } from 'react-redux'
 
-const PlayerDecide = () => {
+const Victory = () => {
 //   const dispatch = useDispatch()
   const stage = useSelector(state => state.stage)
   
   useEffect(() => {
-    if (stage==='playerDecide') {
-      console.log('handling player decide')
+    if (stage==='victory') {
+      console.log('handling victory')
     } // eslint-disable-next-line
   }, [stage])
 
@@ -17,4 +17,4 @@ const PlayerDecide = () => {
   )
 }
 
-export default PlayerDecide
+export default Victory

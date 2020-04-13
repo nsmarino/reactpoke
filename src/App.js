@@ -7,7 +7,18 @@ import Enemy from './components/Enemy'
 
 import { useSelector, useDispatch } from 'react-redux'
 
-import { enemyDecide, enemyAction, enemyEffect, victory, defeat } from './reducers/stageReducer'
+import { 
+  enemyPresent,
+  playerDecide,
+  playerAction,
+  playerEffect,
+  enemyDecide, 
+  enemyAction, 
+  enemyEffect, 
+  victory, 
+  defeat, 
+} from './reducers/stageReducer'
+
 import StageHandlers from './components/stageHandlers';
 
 
@@ -28,10 +39,10 @@ function App() {
       </div>
 
       <div className='testBtns'>
-        {/* <button onClick={() => dispatch(enemyTurn())}>ENEMY PRESENTATION</button>
-        <button onClick={() => dispatch(enemyTurn())}>PLAYER DECIDE</button>
-        <button onClick={() => dispatch(enemyTurn())}>PLAYER ACTION</button>
-        <button onClick={() => dispatch(enemyTurn())}>PLAYER ACTION EFFECT</button> */}
+        <button onClick={() => dispatch(enemyPresent())}>ENEMY PRESENTATION</button>
+        <button onClick={() => dispatch(playerDecide())}>PLAYER DECIDE</button>
+        <button onClick={() => dispatch(playerAction())}>PLAYER ACTION</button>
+        <button onClick={() => dispatch(playerEffect())}>PLAYER EFFECT</button>
         <button onClick={() => dispatch(enemyDecide())}>ENEMY DECIDE</button>
         <button onClick={() => dispatch(enemyAction())}>ENEMY ACTION</button>
         <button onClick={() => dispatch(enemyEffect())}>ENEMY EFFECT</button>

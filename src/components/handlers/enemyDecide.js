@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, } from 'react-redux'
 // import { updateBehavior } from '../reducers/behaviorReducer'
 
 const EnemyDecide = () => {
@@ -9,7 +9,7 @@ const EnemyDecide = () => {
   
   useEffect(() => {
     if (stage==='enemyDecide') {
-      console.log('handling enemy behavior')
+      console.log('handling enemy decide')
     } // eslint-disable-next-line
   }, [stage])
 
