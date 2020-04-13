@@ -4,14 +4,14 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { updateText } from '../reducers/textReducer'
 import { updateEnemyHealth } from '../reducers/enemyReducer'
-import { victory, enemyTurn } from '../reducers/stageReducer'
+import { victory } from '../reducers/stageReducer'
 
 
 const Player = () => {
   const dispatch = useDispatch()
   const player = useSelector(state => state.player)
   const enemy = useSelector(state => state.enemy)
-  const stage = useSelector(state => state.stage)
+  // const stage = useSelector(state => state.stage)
 
   const handleAttack = (move) => {
     dispatch(updateText(`${player.name} used ${move.title}`))
@@ -20,7 +20,7 @@ const Player = () => {
       dispatch(victory())
     } else {
       dispatch(updateEnemyHealth(newEnemyHealth))
-      setTimeout(() => dispatch(enemyTurn()), 2000)
+      // setTimeout(() => dispatch(enemyTurn()), 2000)
     }
   }
 
@@ -40,11 +40,12 @@ const Player = () => {
       <p>health {player.currentHealth}/{player.health}</p>
       <img src={player.avatar} alt="" width='150px'/>
       <div className='movesContainer'>
-        {stage==='victory' ? 
+        {displayMoves()}
+        {/* {stage==='victory' ? 
           <div className="victory">This guy is the winner.</div>
           :
           displayMoves()
-        }
+        } */}
       </div>
     </div>
   )

@@ -7,8 +7,6 @@ const enemyReducer = (state = defaultState, action) => {
         case 'TAKE_DAMAGE':
             const updatedState = { ...state, currentHealth: action.data }
             return updatedState
-        case 'VICTORY':
-            return null
         default:
             return defaultState
     }

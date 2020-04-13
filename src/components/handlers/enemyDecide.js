@@ -1,23 +1,21 @@
 import React, { useEffect } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { updateBehavior } from '../reducers/behaviorReducer'
+// import { updateBehavior } from '../reducers/behaviorReducer'
 
-const enemyDecide = () => {
-  const dispatch = useDispatch()
-
-  const mode = useSelector(state => state.mode)
+const EnemyDecide = () => {
+  // const dispatch = useDispatch()
+  const stage = useSelector(state => state.stage)
   
-  console.log('still alive')
   useEffect(() => {
-    if (mode==='enemyTurn') {
+    if (stage==='enemyDecide') {
       console.log('handling enemy behavior')
-    //   dispatch(updateBehavior('enemy used attack'))
-    //   setTimeout(() => dispatch(updateBehavior('attack was successful')), 1500)
     } // eslint-disable-next-line
-  }, [mode])
+  }, [stage])
 
-  return null
+  return (
+    <></>
+  )
 }
 
-export default enemyDecide
+export default EnemyDecide

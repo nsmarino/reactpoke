@@ -1,10 +1,13 @@
 import React from 'react'
+import EnemyDecide from './handlers/enemyDecide'
+import EnemyAction from './handlers/enemyAction'
 
 const handlerContainer = () => {
     return (
-        <div>
-
-        </div>
+      <div>
+        <EnemyDecide />
+        <EnemyAction />
+      </div>
     )
 }
 

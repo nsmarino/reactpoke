@@ -1,14 +1,51 @@
 
-const stageReducer = (state = 'idle', action) => {
+const stageReducer = (state = 'enemyPresent', action) => {
     switch (action.type) {
-        case 'cloudAttack':
-            return 'cloudAttack'
+
+        case 'PLAYER_DECIDE':
+            return 'playerDecide'
+
+        case 'PLAYER_ACTION':
+            return 'playerAction'
+
+        case 'PLAYER_EFFECT':
+            return 'playerEffect'
+
+        case 'ENEMY_DECIDE':
+            return 'enemyDecide'
+
+        case 'ENEMY_ACTION':
+            return 'enemyAction'
+
+        case 'ENEMY_EFFECT':
+            return 'enemyEffect'
+
         case 'VICTORY':
             return 'victory'
-        case 'ENEMY_TURN':
-            return 'enemyTurn'
+
+        case 'DEFEAT':
+            return 'defeat'
+
         default:
             return state
+    }
+}
+
+const enemyDecide = () => {
+    return {
+        type: 'ENEMY_DECIDE',
+    }
+}
+
+const enemyAction = () => {
+    return {
+        type: 'ENEMY_ACTION',
+    }
+}
+
+const enemyEffect = () => {
+    return {
+        type: 'ENEMY_EFFECT',
     }
 }
 
@@ -18,12 +55,18 @@ const victory = () => {
     }
 }
 
-const enemyTurn = () => {
+const defeat = () => {
     return {
-        type: 'ENEMY_TURN',
+        type: 'DEFEAT',
     }
 }
 
-export { victory, enemyTurn }
+export {
+    enemyDecide, 
+    enemyAction, 
+    enemyEffect, 
+    victory, 
+    defeat 
+}
 
 export default stageReducer
