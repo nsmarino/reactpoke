@@ -1,6 +1,7 @@
 
 .battleContainer {
     display: flex;
+    flex-direction: column;
     padding: 5px;
 }
 
@@ -8,16 +9,8 @@
     margin: 10px;
 }
 
-.testBtns {
+.playerContainer, .enemyContainer {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 18em;
-}
-
-.testBtns * {
-    padding: 1em;
-    width: 10em;
 }
 
 .textContainer {
@@ -29,4 +22,26 @@
     background-color: lightgray;
     display: flex;
     justify-content: space-between;
+}
+
+.blinker {
+    animation: blinker 2s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .testBtns {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 18em;
+}
+
+.testBtns * {
+    padding: 1em;
+    width: 10em;
 }

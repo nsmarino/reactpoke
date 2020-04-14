@@ -25,19 +25,25 @@ const Player = () => {
   }
 
   return (
+    <>
     <div className="playerContainer">
-      <h1>{player.name}</h1>
-      <p>Level {player.level}</p>
-      <p>health {player.currentHealth}/{player.health}</p>
-      <img src={player.avatar} alt="" width='150px'/>
-      <div className='movesContainer'>
+      <div className="playerSprite" style={player.sprite}></div>
+
+      <div className='playerStatus'>
+        <h1>{player.name}</h1>
+        <p>Level {player.level}</p>
+        <p>health {player.currentHealth}/{player.health}</p>
+      </div>
+    </div>
+
+    <div className='movesContainer'>
         {stage==='playerDecide' ?
           displayMoves()
           :
           null
         }
       </div>
-    </div>
+      </>
   )
 }
 

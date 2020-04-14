@@ -1,11 +1,17 @@
-import villainAvatar from '../assets/avatars/villainAvatar.png'
+import spaceworld from '../assets/spaceworld.png'
 
 const villainDoc = {
-    name: 'Scary Ghost',
+    name: 'Charmander',
     health: 100,
     currentHealth: 100,
     level: 8,
-    avatar: villainAvatar,
+    sprite: {
+        border: '1px solid red',
+        width: '100px',
+        height: '100px',
+        background: `url(${spaceworld})`,
+        backgroundPosition: `-900px -45px`,
+    },
     moveset: [
         {
             title: 'Strike',

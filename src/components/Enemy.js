@@ -9,10 +9,14 @@ const Enemy = () => {
   if (stage === 'victory') return null
   return (
     <div className="enemyContainer">
-      <h1>{enemy.name}</h1>
-      <p>Level {enemy.level}</p>
-      <p>health {enemy.currentHealth}/{enemy.health}</p>
-      <img src={enemy.avatar} alt="" width='150px'/>
+
+      <div className="enemyStatus">
+        <h1>{enemy.name}</h1>
+        <p>Level {enemy.level}</p>
+        <p>health {enemy.currentHealth}/{enemy.health}</p>
+      </div>
+      
+      <div style={enemy.sprite}></div>
     </div>
   )
 }

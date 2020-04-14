@@ -33,9 +33,10 @@ function App() {
       <StageHandlers />
       
       <div className='battleContainer'>
-        <Player />
         <Enemy />
+        <Player />
       </div>
+      
       <TextBox />
 
       <div className='testBtns'>
