@@ -15,6 +15,12 @@ const PlayerDoc = {
         {
             title: 'Vine Whip',
             damage: 20,
+            animation: {
+                width: '50px', 
+                height: '50px', 
+                background: 'green',
+                position: 'absolute',
+            },
         },
         {
             title: 'Razor Leaf',

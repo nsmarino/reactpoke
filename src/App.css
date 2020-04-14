@@ -18,6 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .battleContainer {
@@ -48,7 +49,7 @@ body {
 .blinker {
     animation: blinker 1.75s linear infinite;
   }
-  
+   
   @keyframes blinker {
     49% {
       opacity: 1;
@@ -58,6 +59,22 @@ body {
     }
     99% {
       opacity: 0;
+    }
+  }
+
+.playerAction {
+  animation: action 2s linear;
+}
+
+  @keyframes action {
+    from {
+      left: 5em;
+      top: 15em;
+    }
+  
+    to {
+      left: 15em;
+      top: 5em;
     }
   }
 

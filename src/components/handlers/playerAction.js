@@ -13,13 +13,25 @@ const PlayerAction = () => {
   useEffect(() => {
     if (stage==='playerAction') {
       console.log('handling player action')
+      console.log(action)
       dispatch(updateText(`${player.name} used ${action.title}`))
-      setTimeout(() => dispatch(playerEffect()), 3000)
+      // setTimeout(() => dispatch(playerEffect()), 3000)
     } // eslint-disable-next-line
   }, [stage])
 
   return (
-    <></>
+    <>
+    {
+      stage==='playerAction' ?
+      <div 
+        style={action.animation} 
+        className="playerAction" 
+        onAnimationEnd={() => dispatch(playerEffect())}
+      ></div>
+      :
+      null
+    } 
+    </>
   )
 }
 
