@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../reducers/textReducer'
 
-
 const EnemyPresent = () => {
   const dispatch = useDispatch()
   const stage = useSelector(state => state.stage)

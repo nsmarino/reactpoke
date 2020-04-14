@@ -2,11 +2,10 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import MoveBox from './MoveBox'
+
 import { playerDecide, enemyDecide, enemyAction } from '../reducers/stageReducer'
 
 const TextBox = () => {
-
-  // redux hooks
   const dispatch = useDispatch()
   const text = useSelector(state => state.text)
   const stage = useSelector(state => state.stage)
@@ -29,17 +28,17 @@ const TextBox = () => {
     }
   }
 
-    return (
-      <div className="textContainer" onClick={handleClick}>
-        <div>{text}</div>
+  return (
+    <div className="textContainer" onClick={handleClick}>
+      <div>{text}</div>
 
-        {stage==='playerDecide'? 
+      {stage==='playerDecide'? 
         <MoveBox />
         :
         null
-        }
+      }
 
-        {stage==='enemyPresent' || 
+      { stage==='enemyPresent' || 
         stage==='playerEffect' || 
         stage==='enemyDecide' || 
         stage==='enemyEffect'
@@ -47,13 +46,13 @@ const TextBox = () => {
         <p className="blinker">⮟</p>
         :
         null
-        }
-      </div>
-    )
-  }
+      }
+    </div>
+
+  )
+}
 
 export default TextBox
-
 
 // Switch can be error-prone and unnecessarily verbose in many cases. You might consider using an object indexed by team name instead:
 

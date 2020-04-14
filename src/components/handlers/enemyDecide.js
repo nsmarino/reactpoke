@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch} from 'react-redux'
 import { updateText } from '../../reducers/textReducer'
 import { setEnemyAction } from '../../reducers/actionReducer'
-// import { enemyAction } from '../../reducers/stageReducer'
 
 const EnemyDecide = () => {
   const dispatch = useDispatch()
@@ -16,7 +15,6 @@ const EnemyDecide = () => {
       console.log('handling enemy decide')
       dispatch(updateText(`${enemy.name} is now thinking...`))
       dispatch(setEnemyAction(defaultEnemyAction))
-      // setTimeout(() => dispatch(enemyAction()), 3000)
     } // eslint-disable-next-line
   }, [stage])
 

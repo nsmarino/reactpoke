@@ -14,7 +14,6 @@ const EnemyAction = () => {
     if (stage==='enemyAction') {
       console.log('handling enemy action')
       dispatch(updateText(`${enemy.name} used ${action.title}`))
-      // dispatch(setEnemyAction(defaultEnemyAction))
       setTimeout(() => dispatch(enemyEffect()), 3000)
     } // eslint-disable-next-line
   }, [stage])

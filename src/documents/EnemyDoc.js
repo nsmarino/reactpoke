@@ -6,7 +6,6 @@ const enemyDoc = {
     currentHealth: 100,
     level: 8,
     sprite: {
-        border: '1px solid red',
         width: '100px',
         height: '100px',
         background: `url(${spaceworld})`,

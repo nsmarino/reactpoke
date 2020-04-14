@@ -24,7 +24,6 @@ const MoveBox = () => {
     return (
       <div className="movesContainer">
         {displayMoves()}
-        {/* <button className="blinker">next</button> */}
       </div>
     )
   }

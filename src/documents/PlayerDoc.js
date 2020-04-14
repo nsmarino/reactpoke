@@ -6,7 +6,6 @@ const PlayerDoc = {
     currentHealth: 150,
     level: 10,
     sprite: {
-        border: '1px solid green',
         width: '100px',
         height: '100px',
         background: `url(${spaceworld})`,
@@ -14,12 +13,12 @@ const PlayerDoc = {
     },
     moveset: [
         {
-            title: 'Electric Shock',
+            title: 'Vine Whip',
             damage: 20,
         },
         {
-            title: 'Fire Blast',
-            damage: 10,
+            title: 'Razor Leaf',
+            damage: 40,
         }
     ]
   }
