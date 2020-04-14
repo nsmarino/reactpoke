@@ -25,7 +25,6 @@ const PlayerAction = () => {
       stage==='playerAction' ?
       <div 
         style={action.animation} 
-        className="playerAction" 
         onAnimationEnd={() => dispatch(playerEffect())}
       ></div>
       :

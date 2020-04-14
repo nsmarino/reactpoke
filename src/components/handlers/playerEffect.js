@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { updateText } from '../../reducers/textReducer'
 import { updateEnemyHealth } from '../../reducers/enemyReducer'
-import { victory } from '../../reducers/stageReducer'
+import { enemyDecide, victory } from '../../reducers/stageReducer'
 
 const PlayerEffect = () => {
   const dispatch = useDispatch()
@@ -24,8 +24,19 @@ const PlayerEffect = () => {
   }, [stage])
 
   return (
-    <></>
+    <>
+    {
+      stage==='playerEffect' ?
+      <div 
+        style={action.effectAnimation}
+        onAnimationEnd={() => dispatch(enemyDecide())}
+      ></div>
+      :
+      null
+    } </>
   )
 }
 
 export default PlayerEffect
+
+

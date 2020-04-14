@@ -20,7 +20,16 @@ const PlayerDoc = {
                 height: '50px', 
                 background: 'green',
                 position: 'absolute',
+                animation: 'action 2s linear',
             },
+            effectAnimation: {
+                width:'150px', 
+                height:'150px', 
+                background: 'white',
+                position: 'absolute',
+                left: '15em',
+                animation: 'blinker 2s linear 0s 2',
+              }
         },
         {
             title: 'Razor Leaf',
