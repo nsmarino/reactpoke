@@ -1,31 +1,11 @@
 import React from 'react'
 
-import { useSelector, useDispatch } from 'react-redux'
-
-import { playerAction } from '../reducers/stageReducer'
-import { setPlayerAction } from '../reducers/actionReducer'
+import { useSelector } from 'react-redux'
 
 const Player = () => {
-  const dispatch = useDispatch()
   const player = useSelector(state => state.player)
-  const stage = useSelector(state => state.stage)
-
-  const handleAttack = (move) => {
-      dispatch(setPlayerAction(move))
-      dispatch(playerAction()) 
-  }
-
-  const displayMoves = () => {
-    return player.moveset.map(move => 
-      <button 
-        key={move.title} 
-        onClick={() => handleAttack(move)}>
-          {move.title}
-      </button>)
-  }
 
   return (
-    <>
     <div className="playerContainer">
       <div className="playerSprite" style={player.sprite}></div>
 
@@ -35,15 +15,6 @@ const Player = () => {
         <p>health {player.currentHealth}/{player.health}</p>
       </div>
     </div>
-
-    <div className='movesContainer'>
-        {stage==='playerDecide' ?
-          displayMoves()
-          :
-          null
-        }
-      </div>
-      </>
   )
 }
 

@@ -1,6 +1,6 @@
 import spaceworld from '../assets/spaceworld.png'
 
-const CloudDoc = {
+const PlayerDoc = {
     name: 'Bulbasaur',
     health: 150,
     currentHealth: 150,
@@ -24,4 +24,4 @@ const CloudDoc = {
     ]
   }
 
-export default CloudDoc
+export default PlayerDoc

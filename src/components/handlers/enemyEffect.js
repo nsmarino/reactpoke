@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../reducers/textReducer'
 
 import { updatePlayerHealth } from '../../reducers/playerReducer'
-import { playerDecide, defeat } from '../../reducers/stageReducer'
+import { defeat } from '../../reducers/stageReducer'
 
 
 const EnemyEffect = () => {
@@ -23,7 +23,7 @@ const EnemyEffect = () => {
 
       else {
         dispatch(updatePlayerHealth(newPlayerHealth))
-        setTimeout(() => dispatch(playerDecide()), 3000)
+        // setTimeout(() => dispatch(playerDecide()), 3000)
       }
 
     } // eslint-disable-next-line

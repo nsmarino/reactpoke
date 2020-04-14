@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../reducers/textReducer'
-import { playerDecide } from '../../reducers/stageReducer'
 
 
 const EnemyPresent = () => {
@@ -14,7 +13,6 @@ const EnemyPresent = () => {
     if (stage==='enemyPresent') {
       console.log('handling enemy present')
       dispatch(updateText(`Look out, it's ${enemyName}`))
-      setTimeout(() => dispatch(playerDecide()), 3000)
     } // eslint-disable-next-line
   }, [stage])
 

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../reducers/textReducer'
 
 import { updateEnemyHealth } from '../../reducers/enemyReducer'
-import { enemyDecide, victory } from '../../reducers/stageReducer'
+import { victory } from '../../reducers/stageReducer'
 
 
 const PlayerEffect = () => {
@@ -25,7 +25,6 @@ const PlayerEffect = () => {
 
       else {
         dispatch(updateEnemyHealth(newEnemyHealth))
-        setTimeout(() => dispatch(enemyDecide()), 3000)
       }
 
 

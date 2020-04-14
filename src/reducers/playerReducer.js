@@ -1,6 +1,6 @@
-import cloud from '../documents/CloudDoc'
+import player from '../documents/PlayerDoc'
 
-const defaultState = cloud
+const defaultState = player
 
 const playerReducer = (state = defaultState, action) => {
     switch (action.type) {

@@ -11,12 +11,16 @@
 
 .playerContainer, .enemyContainer {
     display: flex;
+    font-family: sans-serif;
 }
 
 .textContainer {
-    border: 1px solid black;
+    border-style: double;
+    border-width: 4px;
     border-radius: 5px;
     padding: 1em;
+    width: 22em;
+    height: 4em;
     font-family: monospace;
     font-size: 1.2em;
     background-color: lightgray;
@@ -25,11 +29,17 @@
 }
 
 .blinker {
-    animation: blinker 2s linear infinite;
+    animation: blinker 1.75s linear infinite;
   }
   
   @keyframes blinker {
+    49% {
+      opacity: 1;
+    }
     50% {
+      opacity: 0;
+    }
+    99% {
       opacity: 0;
     }
   }

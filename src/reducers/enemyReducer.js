@@ -1,6 +1,6 @@
-import villain from '../documents/VillainDoc'
+import enemy from '../documents/EnemyDoc'
 
-const defaultState = villain
+const defaultState = enemy
 
 const enemyReducer = (state = defaultState, action) => {
     switch (action.type) {

@@ -1,6 +1,6 @@
 import spaceworld from '../assets/spaceworld.png'
 
-const villainDoc = {
+const enemyDoc = {
     name: 'Charmander',
     health: 100,
     currentHealth: 100,
@@ -24,4 +24,4 @@ const villainDoc = {
     ],
   }
 
-export default villainDoc
+export default enemyDoc
