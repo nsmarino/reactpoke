@@ -5,6 +5,7 @@ const enemyDoc = {
     health: 100,
     currentHealth: 100,
     level: 8,
+    gender: '♂',
     sprite: {
         width: '100px',
         height: '100px',

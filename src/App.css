@@ -7,6 +7,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 2em;
+  font-size: 16px;
 }
 
 .container {
@@ -31,6 +32,10 @@ body {
     justify-content: space-evenly;
     font-family: sans-serif;
     align-items: flex-end;
+}
+
+.enemyContainer {
+  align-items: flex-start;
 }
 
 .textContainer {
@@ -94,3 +99,27 @@ body {
     padding: 1em;
     width: 10em;
 } */
+
+
+.enemyStatus, .enemyStatus * {
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.enemyStatus h1 {
+  font-size: 1.25em;
+  font-weight: 100;
+}
+
+.enemyStatus p {
+  margin-left: 3em;
+  font-weight: bold;
+}
+
+.enemyStatus h2 {
+  font-size: .75em;
+  color: goldenrod;
+  background-color: black;
+  padding: .25em;
+}
