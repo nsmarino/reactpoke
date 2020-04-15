@@ -46,10 +46,6 @@ body {
     justify-content: space-between;
 }
 
-.blinker {
-    animation: blinker 1.75s linear infinite;
-  }
-   
   @keyframes blinker {
     49% {
       opacity: 1;
@@ -61,10 +57,6 @@ body {
       opacity: 0;
     }
   }
-
-.playerAction {
-  animation: action 2s linear;
-}
 
   @keyframes action {
     from {
@@ -78,6 +70,19 @@ body {
     }
   }
 
+  @keyframes enemyAction {
+    from {
+      left: 15em;
+      top: 5em;
+    }
+  
+    to {
+      left: 5em;
+      top: 15em;
+    }
+  }
+  
+/* 
   .testBtns {
     display: flex;
     flex-direction: column;
@@ -88,4 +93,4 @@ body {
 .testBtns * {
     padding: 1em;
     width: 10em;
-}
+} */

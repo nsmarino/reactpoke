@@ -12,14 +12,22 @@ const EnemyAction = () => {
 
   useEffect(() => {
     if (stage==='enemyAction') {
-      console.log('handling enemy action')
       dispatch(updateText(`${enemy.name} used ${action.title}`))
-      setTimeout(() => dispatch(enemyEffect()), 3000)
     } // eslint-disable-next-line
   }, [stage])
 
   return (
-    <></>
+    <>
+    {
+      stage==='enemyAction' ?
+      <div 
+        style={action.animation} 
+        onAnimationEnd={() => dispatch(enemyEffect())}
+      ></div>
+      :
+      null
+    } 
+    </>
   )
 }
 

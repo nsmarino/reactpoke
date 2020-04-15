@@ -23,6 +23,7 @@ const PlayerEffect = () => {
     } // eslint-disable-next-line
   }, [stage])
 
+  // during playerEffect stage, action animates, then calls next stage
   return (
     <>
     {

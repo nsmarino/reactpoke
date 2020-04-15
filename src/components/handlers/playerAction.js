@@ -12,10 +12,7 @@ const PlayerAction = () => {
   
   useEffect(() => {
     if (stage==='playerAction') {
-      console.log('handling player action')
-      console.log(action)
       dispatch(updateText(`${player.name} used ${action.title}`))
-      // setTimeout(() => dispatch(playerEffect()), 3000)
     } // eslint-disable-next-line
   }, [stage])
 

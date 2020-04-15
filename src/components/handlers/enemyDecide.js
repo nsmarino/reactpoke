@@ -12,7 +12,6 @@ const EnemyDecide = () => {
   
   useEffect(() => {
     if (stage==='enemyDecide') {
-      console.log('handling enemy decide')
       dispatch(updateText(`${enemy.name} is now thinking...`))
       dispatch(setEnemyAction(defaultEnemyAction))
     } // eslint-disable-next-line

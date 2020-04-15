@@ -1,4 +1,4 @@
-const defaultState = 'What should Cloud do?'
+const defaultState = ''
 
 const textReducer = (state = defaultState, action) => {
     switch (action.type) {

@@ -20,7 +20,7 @@ const PlayerDoc = {
                 height: '50px', 
                 background: 'green',
                 position: 'absolute',
-                animation: 'action 2s linear',
+                animation: 'action 1s linear',
             },
             effectAnimation: {
                 width:'150px', 

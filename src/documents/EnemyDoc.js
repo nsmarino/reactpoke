@@ -13,13 +13,25 @@ const enemyDoc = {
     },
     moveset: [
         {
-            title: 'Strike',
-            damage: 10,
+            title: 'Fireball',
+            damage: 10,            
+            animation: {
+                width: '50px', 
+                height: '50px', 
+                background: 'red',
+                position: 'absolute',
+                animation: 'enemyAction 1s linear',
+            },
+            effectAnimation: {
+                width:'150px', 
+                height:'150px', 
+                background: 'white',
+                position: 'absolute',
+                left: '1em',
+                top: '10em',
+                animation: 'blinker 2s linear 0s 2',
+              }
         },
-        {
-            title: 'Shock',
-            damage: 5,
-        }
     ],
   }
 
