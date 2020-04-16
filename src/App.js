@@ -20,8 +20,8 @@ import StageHandlers from './components/stageHandlers';
 // } from './reducers/stageReducer'
 
 function App() {
-  // const state = useSelector(state => state)
-  // console.log(state)
+  const state = useSelector(state => state)
+  console.log(state)
 
   // const dispatch = useDispatch()
   

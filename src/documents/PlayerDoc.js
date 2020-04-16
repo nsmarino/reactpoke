@@ -52,7 +52,19 @@ const PlayerDoc = {
                 animation: 'blinker 2s linear 0s 2',
               }
         }
-    ]
+    ],
+    pack: [
+        {
+          title: 'Potion',
+          type: 'Buff',
+          amount: '20'
+        },
+        {
+            title: 'Pokeball',
+            type: 'Ball',
+            amount: '50'
+        },
+    ],
   }
 
 export default PlayerDoc

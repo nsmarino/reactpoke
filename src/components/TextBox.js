@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
-import MoveBox from './MoveBox'
+import MoveBox from './ActionBox'
 
 import { playerDecide, enemyDecide, enemyAction } from '../reducers/stageReducer'
 
@@ -39,7 +39,6 @@ const TextBox = () => {
         break;
     }
   }
-
   return (
     <TextBoxDiv onClick={handleClick}>
       <div>{text}</div>
@@ -60,7 +59,6 @@ const TextBox = () => {
         null
       }
     </TextBoxDiv>
-
   )
 }
 
