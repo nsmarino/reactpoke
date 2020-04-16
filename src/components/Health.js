@@ -12,9 +12,8 @@ const StyledHealth = styled.div.attrs(props => ({
  `
 
 const Health = ({parent}) => {
-  let color = parent.currentHealth > 50 ? 'green' : 'orange'
-
-  if (parent.currentHealth < 30) color = 'red'
+  let color = parent.currentHealth > 40 ? 'green' : 'orange'
+  if (parent.currentHealth < 20) color = 'red'
 
   return (
     <StyledHealth width={parent.currentHealth} color={color} />

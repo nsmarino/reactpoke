@@ -1,9 +1,21 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import styled from 'styled-components'
 
 import MoveBox from './MoveBox'
 
 import { playerDecide, enemyDecide, enemyAction } from '../reducers/stageReducer'
+
+const TextBoxDiv = styled.div`
+  border-style: double;
+  border-width: 4px;
+  border-radius: 5px;
+  height: 6em;
+  font-family: monospace;
+  font-size: 1.2em;
+  background-color: whitesmoke;
+  display: flex;
+`
 
 const TextBox = () => {
   const dispatch = useDispatch()
@@ -29,7 +41,7 @@ const TextBox = () => {
   }
 
   return (
-    <div className="textContainer" onClick={handleClick}>
+    <TextBoxDiv onClick={handleClick}>
       <div>{text}</div>
 
       {stage==='playerDecide'? 
@@ -47,7 +59,7 @@ const TextBox = () => {
         :
         null
       }
-    </div>
+    </TextBoxDiv>
 
   )
 }

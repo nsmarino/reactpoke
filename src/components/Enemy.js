@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import EnemyStatus from './EnemyStatus'
+import Status from './Status'
 
 const Enemy = () => {
   const enemy = useSelector(state => state.enemy)
@@ -11,7 +11,7 @@ const Enemy = () => {
 
   return (
     <div className="enemyContainer">
-      <EnemyStatus /> 
+      <Status pokemon={enemy} /> 
       <div style={enemy.sprite}></div>
     </div>
   )
