@@ -14,7 +14,6 @@ const TextBoxDiv = styled.div`
   height: 7em;
   width: 25em;
   font-family: monospace;
-  // font-size: 1.2em;
   background-color: whitesmoke;
   display: flex;
   position: absolute;
@@ -44,6 +43,7 @@ const TextBox = () => {
         break;
     }
   }
+  
   return (
     <TextBoxDiv onClick={handleClick}>
       <div>{text}</div>

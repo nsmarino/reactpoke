@@ -4,13 +4,13 @@ import styled from 'styled-components'
 
 import spaceworld from '../assets/spaceworld.png'
 
-const EnemySpriteDiv = styled.div.attrs(props => ({
+const EnemySpriteImg = styled.img.attrs(props => ({
   spritePosition: props.spritePosition,
 }))`
+  object-fit: none;
+  object-position: ${props=>props.spritePosition};
   width: 100px;
   height: 100px;
-  background: url(${spaceworld});
-  background-position: ${props=>props.spritePosition};
   position: absolute;
   left: 16em;
   top: 1em;
@@ -22,7 +22,12 @@ const EnemySprite = () => {
   if (stage === 'victory') return null
 
   return (
-      <EnemySpriteDiv spritePosition={enemy.spritePosition} className="enemySprite"></EnemySpriteDiv>
+    <EnemySpriteImg 
+      src={spaceworld} 
+      alt={`${enemy.name}`} 
+      spritePosition={enemy.spritePosition} 
+      className="enemySprite"
+    />
   )
 }
 

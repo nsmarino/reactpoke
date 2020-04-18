@@ -43,6 +43,10 @@ body {
     }   
   }
 
+  .blinker {
+    animation: blinker 2s linear infinite;
+  }
+
   @keyframes blinker {
     49% {
       opacity: 1;

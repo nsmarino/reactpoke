@@ -40,7 +40,6 @@ function App() {
       <PlayerStatus />
       <TextBox />
     </ContainerDiv>
-
       <div className='testBtns' style={{display:'flex', flexDirection: 'column'}}>
         <button onClick={() => dispatch(enemyAppear())}>Enemy appears</button>
         <button onClick={() => dispatch(enemyPresent())}>Enemy presents itself</button>

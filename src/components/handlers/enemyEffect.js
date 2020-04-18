@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { updateText } from '../../reducers/textReducer'
+// import { updateText } from '../../reducers/textReducer'
 import { updatePlayerHealth } from '../../reducers/playerReducer'
 import { playerDecide, defeat } from '../../reducers/stageReducer'
 
@@ -14,7 +14,7 @@ const EnemyEffect = () => {
   useEffect(() => {
     if (stage==='enemyEffect') {
 
-      dispatch(updateText(`${action.title} struck for ${action.damage} damage`))
+      // dispatch(updateText(`${action.title} struck for ${action.damage} damage`))
       
       const newPlayerHealth = player.currentHealth - action.damage
       if ( newPlayerHealth <= 0 ) dispatch(defeat())
