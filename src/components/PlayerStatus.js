@@ -1,85 +1,46 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-
+import styled from 'styled-components'
 import Health from './Health'
 import XP from './XP'
 import Connector from './Connector'
 
-const PlayerStatus = ({pokemon}) => {
-  const stage = useSelector(state => state.stage)
-  // const player = useSelector(state => state.player)
+import PokeHeader from '../styles/PokeHeader'
+import HPBarDiv from '../styles/HPBarDiv'
+import HPNumeric from '../styles/HPNumeric'
 
-  // CSS code is EXTREMELY messy. Refactor using Styled Components.
+const PlayerStatusDiv = styled.div`
+  position: absolute;
+  left: 13em;
+  top: 10em;
+  display: flex;
+  align-items: flex-end;
+`
 
-  const nameStyle = {
-     textTransform: `uppercase`,
-     fontSize: `1em`,
-     fontFamily: `sans-serif`,
-     fontWeight: `100`,
-     margin: `0`
-  }
-  const levelStyle = {
-      margin: `0`,
-      marginLeft: `4em`,
-  }
-  const hpStyle = {
-    fontSize: `.75em`,
-    fontWeight: `bold`,
-    color: `goldenrod`,
-    background: `black`,
-    margin: `0em`, 
-    width: `2em`,
-  }
-  const barStyle = {
-      display: 'flex',
-      alignItems: 'center',
-      //justifyContent: 'flex-end',
-      borderBottom: '3px solid black',
-      borderRight: '9px solid black',
-      width: '100px',
-      height: '.75em',
-  }
-  const testStyle = {
-    display: 'flex', 
-    flexDirection: 'column',
-    alignItems: 'flex-end'
-  }
-
-  // FIX IF REUSING FOR ENEMYSTATUS
-  if (stage === 'victory') return null
+const PlayerStatus = () => {
+  const player = useSelector(state => state.player)
 
   return (
-  <div>
-
-    <h1 style={nameStyle}>{pokemon.name}</h1>
-    <p style={levelStyle}>:L{pokemon.level} {pokemon.gender}</p>
-
-    {/* big flexbox */}
-    <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-      <div style={testStyle}>
-        <div className="hpBar" style={{display: 'flex'}}>
-      <h2 style={hpStyle}>HP:</h2>
-      <div style={barStyle}>
-        <Health parent={pokemon}/>
+    <PlayerStatusDiv>
+    <div style={{display: 'flex', flexDirection: 'column',alignItems: 'flex-end',}}>   
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        <PokeHeader>
+        <h1>{player.name}</h1>
+        <p>:L{player.level} {player.gender}</p>
+      </PokeHeader>
+        <HPBarDiv>
+        <h2>HP:</h2>
+        <div className='bar'>
+          <Health parent={player}/>
+        </div>
+      </HPBarDiv>
       </div>
+      <HPNumeric>{player.currentHealth}/ {player.health}</HPNumeric>
+      <XP pokemon={player}/>
     </div>
-        <p>{pokemon.currentHealth}/ {pokemon.health}</p>
-        <XP pokemon={pokemon}/>
-      </div>
-      <Connector />
-    </div>
-
-  </div> 
+    <Connector />
+    </PlayerStatusDiv>
   )
 }
 
 export default PlayerStatus
-
-// conditional rendering if same status component is ultimately
-// used for both player and enemy
-// {
-//     pokemon === player && <div>
-//       <p>{pokemon.currentHealth}/ {pokemon.health}</p>
-//         <XP pokemon={pokemon}/>
-//       </div>
-//   }

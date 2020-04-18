@@ -10,8 +10,10 @@ const EnemyPresent = () => {
 
   useEffect(() => {
     if (stage==='enemyPresent') {
-      console.log('handling enemy present')
-      dispatch(updateText(`Look out, it's ${enemyName}`))
+      // const testEnemy = document.querySelector('.enemyContainer')
+      // testEnemy.classList.add('enemyPresent')
+      // console.log(testEnemy)
+      dispatch(updateText(`Wild ${enemyName.toUpperCase()} appeared!`))
     } // eslint-disable-next-line
   }, [stage])
 

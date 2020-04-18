@@ -1,5 +1,6 @@
 import React from 'react'
 
+import EnemyAppear from './handlers/enemyAppear'
 import EnemyPresent from './handlers/enemyPresent'
 
 import PlayerDecide from './handlers/playerDecide'
@@ -16,7 +17,7 @@ import Defeat from './handlers/defeat'
 const handlerContainer = () => {
     return (
       <div>
-
+        <EnemyAppear />
         <EnemyPresent />
 
         <PlayerDecide />

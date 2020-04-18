@@ -1,6 +1,8 @@
 
-const stageReducer = (state = 'enemyPresent', action) => {
+const stageReducer = (state = 'enemyAppear', action) => {
     switch (action.type) {
+        case 'ENEMY_APPEAR':
+            return 'enemyAppear'
 
         case 'ENEMY_PRESENT':
             return 'enemyPresent'
@@ -31,6 +33,12 @@ const stageReducer = (state = 'enemyPresent', action) => {
 
         default:
             return state
+    }
+}
+
+const enemyAppear = () => {
+    return {
+        type: 'ENEMY_APPEAR',
     }
 }
 
@@ -89,6 +97,7 @@ const defeat = () => {
 }
 
 export {
+    enemyAppear,
     enemyPresent,
     playerDecide,
     playerAction,

@@ -7,14 +7,19 @@ import MoveBox from './ActionBox'
 import { playerDecide, enemyDecide, enemyAction } from '../reducers/stageReducer'
 
 const TextBoxDiv = styled.div`
+  box-sizing: border-box;
   border-style: double;
-  border-width: 4px;
-  border-radius: 5px;
-  height: 6em;
+  border-width: .25em;
+  border-radius: .25em;
+  height: 7em;
+  width: 25em;
   font-family: monospace;
-  font-size: 1.2em;
+  // font-size: 1.2em;
   background-color: whitesmoke;
   display: flex;
+  position: absolute;
+  left: 0em;
+  top: 18em;
 `
 
 const TextBox = () => {

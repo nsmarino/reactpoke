@@ -7,6 +7,7 @@ const PlayerDoc = {
     level: 10,
     xp: 25,
     gender: '♂',
+    spritePosition: '-35px -45px',
     sprite: {
         width: '100px',
         height: '100px',

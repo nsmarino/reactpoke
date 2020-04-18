@@ -1,53 +1,58 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch} from 'react-redux'
 import './App.css';
 
-import TextBox from './components/TextBox'
-import Player from './components/Player'
-import Enemy from './components/Enemy'
 import StageHandlers from './components/stageHandlers';
+import EnemyStatus from './components/EnemyStatus'
+import EnemySprite from './components/EnemySprite'
+import PlayerSprite from './components/PlayerSprite'
+import PlayerStatus from './components/PlayerStatus'
+import TextBox from './components/TextBox'
 
-// import { 
-//   enemyPresent,
-//   playerDecide,
-//   playerAction,
-//   playerEffect,
-//   enemyDecide, 
-//   enemyAction, 
-//   enemyEffect, 
-//   victory, 
-//   defeat, 
-// } from './reducers/stageReducer'
+import ContainerDiv from './styles/ContainerDiv'
+
+import {
+  enemyAppear, 
+  enemyPresent,
+  playerDecide,
+  playerAction,
+  playerEffect,
+  enemyDecide, 
+  enemyAction, 
+  enemyEffect, 
+  victory, 
+  defeat, 
+} from './reducers/stageReducer'
 
 function App() {
+  const dispatch = useDispatch()
   const state = useSelector(state => state)
   console.log(state)
 
-  // const dispatch = useDispatch()
-  
   return (
     <div className="App">
-      <div className="container">
-        <StageHandlers />
-      
-        <div className='battleContainer'>
-          <Enemy />
-          <Player />
-        </div>
-      
-        <TextBox />
+
+    <ContainerDiv>
+      <StageHandlers />
+      <EnemyStatus />
+      <EnemySprite />
+      <PlayerSprite />
+      <PlayerStatus />
+      <TextBox />
+    </ContainerDiv>
+
+      <div className='testBtns' style={{display:'flex', flexDirection: 'column'}}>
+        <button onClick={() => dispatch(enemyAppear())}>Enemy appears</button>
+        <button onClick={() => dispatch(enemyPresent())}>Enemy presents itself</button>
+        <button onClick={() => dispatch(playerDecide())}>Player makes decision</button>
+        <button onClick={() => dispatch(playerAction())}>Player action is shown</button>
+        <button onClick={() => dispatch(playerEffect())}>Effect of action is shown</button>
+        <button onClick={() => dispatch(enemyDecide())}>Enemy makes decision</button>
+        <button onClick={() => dispatch(enemyAction())}>Enemy action is shown</button>
+        <button onClick={() => dispatch(enemyEffect())}>Effect of enemy action is shown</button>
+        <button onClick={() => dispatch(victory())}>Player victory</button>
+        <button onClick={() => dispatch(defeat())}>Player is defeated</button>
       </div>
-      {/* <div className='testBtns'>
-        <button onClick={() => dispatch(enemyPresent())}>ENEMY PRESENTATION</button>
-        <button onClick={() => dispatch(playerDecide())}>PLAYER DECIDE</button>
-        <button onClick={() => dispatch(playerAction())}>PLAYER ACTION</button>
-        <button onClick={() => dispatch(playerEffect())}>PLAYER EFFECT</button>
-        <button onClick={() => dispatch(enemyDecide())}>ENEMY DECIDE</button>
-        <button onClick={() => dispatch(enemyAction())}>ENEMY ACTION</button>
-        <button onClick={() => dispatch(enemyEffect())}>ENEMY EFFECT</button>
-        <button onClick={() => dispatch(victory())}>VICTORY</button>
-        <button onClick={() => dispatch(defeat())}>DEFEAT</button>
-      </div> */}
 
     </div>
   );

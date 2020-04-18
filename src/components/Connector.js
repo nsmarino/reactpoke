@@ -6,7 +6,7 @@ const Connector = () => {
   return (
     <div>
     <Triangle shape='10px 0px 0px 10px' />
-    <div style={{width: '10px', height: '60px', backgroundColor: 'black'}}></div>
+    <div style={{width: '10px', height: '38px', backgroundColor: 'black'}}></div>
     <Triangle shape='0px 0px 10px 10px' />
     </div>
   )
