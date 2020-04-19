@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 // reducers
-// import { playerDecide, enemyDecide, enemyAction } from '../reducers/stageReducer'
-import { newTextArray } from '../reducers/textArrayReducer'
+import { playerDecide, } from '../reducers/stageReducer'
+// import { newTextArray } from '../reducers/textArrayReducer'
 //components
-import MoveBox from './ActionBox'
+import ActionTest from './ActionTest'
 
 const TextBoxDiv = styled.div`
   box-sizing: border-box;
@@ -39,10 +39,11 @@ const NewTextBox = () => {
     const nextStage = () => {
       setCounter(0)
       console.log('next stage')
-      dispatch(newTextArray(['new text array, string one', 'new, string two']))
+      // dispatch(newTextArray(['new text array, string one', 'new, string two']))
 
       const stageAfter = {
-        enemyPresent: () => console.log('go to player decide'), // dispatch(playerDecide())
+        enemyPresent: () => dispatch(playerDecide()),
+        playerDecide: () => null,
         playerEffect: () => console.log('go to enemy decide'),// dispatch(enemyDecide())
         enemyDecide: () => console.log('go to enemy action'),//dispatch(enemyAction())
         enemyEffect: () => console.log('go to player decide'),//dispatch(playerDecide())
@@ -61,9 +62,9 @@ const NewTextBox = () => {
   //   </>
   // )
   return (
-    <TextBoxDiv onClick={() => handleClick(stage)}>
-      <div>{textArray[counter]}</div>
-      { stage==='playerDecide'? <MoveBox /> : null }
+    <TextBoxDiv>
+      <div onClick={() => handleClick(stage)}>{textArray[counter]}</div>
+      { stage==='playerDecide'? <ActionTest /> : null }
     </TextBoxDiv>
   )
 

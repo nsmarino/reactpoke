@@ -10,6 +10,7 @@ import PlayerStatus from './components/PlayerStatus'
 import TextBox from './components/TextBox'
 
 import NewTextBox from './components/NewTextBox'
+import ActionTest from './components/ActionTest'
 
 import ContainerDiv from './styles/ContainerDiv'
 
@@ -32,7 +33,7 @@ function App() {
   console.log(state)
 
   return (
-    <div className="App">
+  <div className="App">
 
     <ContainerDiv>
       <StageHandlers />
@@ -44,7 +45,7 @@ function App() {
       <NewTextBox />
     </ContainerDiv>
     
-      <div className='testBtns' style={{display:'flex', flexDirection: 'column'}}>
+    <div className='testBtns' style={{display:'flex', flexDirection: 'column'}}>
         <button onClick={() => dispatch(enemyAppear())}>Enemy appears</button>
         <button onClick={() => dispatch(enemyPresent())}>Enemy presents itself</button>
         <button onClick={() => dispatch(playerDecide())}>Player makes decision</button>
@@ -56,8 +57,8 @@ function App() {
         <button onClick={() => dispatch(victory())}>Player victory</button>
         <button onClick={() => dispatch(defeat())}>Player is defeated</button>
       </div>
-
-    </div>
+    <ActionTest />
+  </div>
   );
 }
 
@@ -78,3 +79,8 @@ export default App;
 // added to the store with some booleans? the text handler will receive
 // from it the relevant strings to display to player. so from this i
 // know that the textHandler needs to be implemented first.
+
+
+// i feel its currently a problem how dispatches and handlers are scattered
+// among different types of components. specifically, is there a better place
+// for handling action object than the ActionBox component?

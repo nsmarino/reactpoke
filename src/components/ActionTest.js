@@ -1,10 +1,13 @@
 // libraries
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 // reducers
 import { playerAction } from '../reducers/stageReducer'
 import { setPlayerAction } from '../reducers/actionReducer'
+import { newTextArray } from '../reducers/textArrayReducer'
+// utils
+import roll from '../utils/roll'
 // styles
 const TopMenuDiv = styled.div`
 width: 15em;
@@ -53,19 +56,37 @@ const ActionButton = styled.button`
   }
 `
 
-const ActionBox = () => {
+const ActionTest = () => {
   const [currentMenu, setCurrentMenu] = useState('topMenu')
-
   const dispatch = useDispatch()
   const moves = useSelector(state => state.player.moveset)
 
-  const handleMove = (move) => {
+  function checkMiss() {
+    const missRoll = roll()
+    return missRoll > 50 ? {missed: true} : {missed: false}
+  }
+
+  function checkEffective() {
+      return {superEffective: true}
+  }
+
+  const handleClick = (move) => {
+    const narration = []
+    const handledAction = {...move, ...checkMiss(), ...checkEffective() }
+    
+    narration.push(`used action ${handledAction.title}`)
+    if (handledAction.missed === true) narration.push('attack missed')
+
+    console.log(handledAction)
+    console.log(narration)
+
+    dispatch(newTextArray(narration))
     dispatch(setPlayerAction(move))
     dispatch(playerAction()) 
   }
 
   return (
-    <>
+  <div style={{display: 'flex'}}>
     <button onClick={() => setCurrentMenu('topMenu')}>top</button>
     {
       currentMenu==='topMenu' && 
@@ -79,14 +100,14 @@ const ActionBox = () => {
     {
       currentMenu==='fightMenu' && 
       <FightMenuDiv>
-        {moves[0] ? <ActionButton onClick={() => handleMove(moves[0])}>{moves[0].title}</ActionButton> : <p> —</p>}
-        {moves[1] ? <ActionButton onClick={() => handleMove(moves[1])}>{moves[1].title}</ActionButton> : <p> —</p>}
-        {moves[2] ? <ActionButton onClick={() => handleMove(moves[2])}>{moves[2].title}</ActionButton> : <p> —</p>}
-        {moves[3] ? <ActionButton onClick={() => handleMove(moves[3])}>{moves[3].title}</ActionButton> : <p> —</p>}
+        {moves[0] ? <ActionButton onClick={() => handleClick(moves[0])}>{moves[0].title}</ActionButton> : <p> —</p>}
+        {moves[1] ? <ActionButton onClick={() => handleClick(moves[1])}>{moves[1].title}</ActionButton> : <p> —</p>}
+        {moves[2] ? <ActionButton onClick={() => handleClick(moves[2])}>{moves[2].title}</ActionButton> : <p> —</p>}
+        {moves[3] ? <ActionButton onClick={() => handleClick(moves[3])}>{moves[3].title}</ActionButton> : <p> —</p>}
       </FightMenuDiv>
     }
-    </>
+  </div>
   )
 }
 
-export default ActionBox
+export default ActionTest

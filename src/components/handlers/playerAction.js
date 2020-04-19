@@ -5,6 +5,7 @@ import { updateText } from '../../reducers/textReducer'
 import { playerEffect, enemyDecide } from '../../reducers/stageReducer'
 
 import roll from '../../utils/roll'
+import { newTextArray } from '../../reducers/textArrayReducer'
 
 // currently an effect hook rolls d100 and handles roll
 // if roll under 95, attack hits, damage is processed and
@@ -23,6 +24,7 @@ const PlayerAction = () => {
   
   useEffect(() => {
     if (stage==='playerAction') {
+
       dispatch(updateText(`${player.name} used ${action.title}`))
       const rolled = roll()
       console.log(rolled)
@@ -31,6 +33,14 @@ const PlayerAction = () => {
         setTimeout(() => dispatch(updateText(`But ${player.name}'s attack missed!`)), 2000)
         setTimeout(() => dispatch(enemyDecide()), 1000)
       }
+
+      // better version, work in progress:
+      // array of text strings is assembled piece by piece
+      // along with an action object that has booleans,
+      // then they are dispatched to their respective reducers.
+      dispatch(newTextArray([`${player.name} used ${action.title}`]))
+
+
     } // eslint-disable-next-line
   }, [stage])
 
