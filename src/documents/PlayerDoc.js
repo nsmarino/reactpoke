@@ -6,6 +6,7 @@ const PlayerDoc = {
     currentHealth: 100,
     level: 10,
     xp: 25,
+    speed: 20,
     gender: '♂',
     spritePosition: '-35px -45px',
     sprite: {

@@ -6,6 +6,13 @@ import { playerEffect, enemyDecide } from '../../reducers/stageReducer'
 
 import roll from '../../utils/roll'
 
+// currently an effect hook rolls d100 and handles roll
+// if roll under 95, attack hits, damage is processed and
+// animation is shown. otherwise, text is updated to show
+// that attack missed and we go on to enemyDecide stage
+// implemented in really clumsy way using timers
+// need to refactor and think more clearly about the click-event handlers
+
 const PlayerAction = () => {
   const dispatch = useDispatch()
   const stage = useSelector(state => state.stage)
@@ -24,7 +31,6 @@ const PlayerAction = () => {
         setTimeout(() => dispatch(updateText(`But ${player.name}'s attack missed!`)), 2000)
         setTimeout(() => dispatch(enemyDecide()), 1000)
       }
-      // setAttackHit(true)
     } // eslint-disable-next-line
   }, [stage])
 
