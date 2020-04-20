@@ -1,14 +1,12 @@
-import React, { useEffect } from 'react';
+// #region imports
+import React from 'react';
 import { useSelector, useDispatch} from 'react-redux'
 import './App.css';
 // components
-import StageHandlers from './components/stageHandlers';
 import EnemyStatus from './components/status displays/EnemyStatus'
 import EnemySprite from './components/sprites/EnemySprite'
 import PlayerSprite from './components/sprites/PlayerSprite'
 import PlayerStatus from './components/status displays/PlayerStatus'
-// import TextBox from './components/TextBox'
-// TEST COMPONENTS
 import NewTextBox from './components/textbox/NewTextBox'
 // reducers
 import {enemyAppear, enemyPresent,playerDecide,playerAction,playerEffect,enemyDecide, enemyAction, enemyEffect, victory, defeat, 
@@ -16,30 +14,31 @@ import {enemyAppear, enemyPresent,playerDecide,playerAction,playerEffect,enemyDe
 // styles
 import ContainerDiv from './styles/ContainerDiv'
 
+import useStageHandler from './components/useStageHandler'
+// //#endregion
+
 function App() {
   const dispatch = useDispatch()
   const state = useSelector(state => state)
-  const stage = useSelector(state=> state.stage)
   console.log(state)
 
-  const handleThing = () => console.log('can call functions from effect hook')
-  
-  useEffect(() => {
-    handleThing()
-  }, [stage])
+  useStageHandler()
 
   return (
   <div className="App">
 
     <ContainerDiv>
+
       <div className="animation"></div>
-      <StageHandlers />
+
       <EnemyStatus />
       <EnemySprite />
+
       <PlayerSprite />
       <PlayerStatus />
-      {/* <TextBox /> */}
+
       <NewTextBox />
+
     </ContainerDiv>
     
     <div className='testBtns' style={{display:'flex', flexDirection: 'column'}}>
@@ -79,3 +78,5 @@ export default App;
 // Refactor "stageHandler" components into functions called by App effect hook
 // Refactor animations into classes (or style attr?) on empty div in App (S.C.?)
 // Finetune implementation of Action Handler and remove old code.
+
+// finetune action reducer

@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 // reducers
-import { playerDecide, } from '../../reducers/stageReducer'
-// import { newTextArray } from '../reducers/textArrayReducer'
+import { playerDecide, playerEffect, enemyDecide, enemyAction, enemyEffect } from '../../reducers/stageReducer'
 //components
 import ActionTest from './ActionTest'
 
@@ -38,15 +37,15 @@ const NewTextBox = () => {
     // only called when final text string is clicked on
     const nextStage = () => {
       setCounter(0)
-      console.log('next stage')
-      // dispatch(newTextArray(['new text array, string one', 'new, string two']))
 
       const stageAfter = {
         enemyPresent: () => dispatch(playerDecide()),
         playerDecide: () => null,
-        playerEffect: () => console.log('go to enemy decide'),// dispatch(enemyDecide())
-        enemyDecide: () => console.log('go to enemy action'),//dispatch(enemyAction())
-        enemyEffect: () => console.log('go to player decide'),//dispatch(playerDecide())
+        playerAction: () => dispatch(playerEffect()),
+        playerEffect: () => dispatch(enemyDecide()),
+        enemyDecide: () => dispatch(enemyAction()),
+        enemyAction: () => dispatch(enemyEffect()),
+        enemyEffect: () => dispatch(playerDecide()),
       }
       return stageAfter[currentStage]()
     }
@@ -54,16 +53,9 @@ const NewTextBox = () => {
     textArray.length === counter + 1 ? nextStage() : setCounter(counter + 1)
   }
 
-  // test detritus
-  // return (
-  //   <>
-  //     <button onClick={() => handleClick(stage)}>test</button>
-  //     <p style={{color: 'white'}}>{textArray[counter]}</p>
-  //   </>
-  // )
   return (
-    <TextBoxDiv>
-      <div onClick={() => handleClick(stage)}>{textArray[counter]}</div>
+    <TextBoxDiv onClick={() => handleClick(stage)}>
+      <div>{textArray[counter]}</div>
       { stage==='playerDecide'? <ActionTest /> : null }
     </TextBoxDiv>
   )
