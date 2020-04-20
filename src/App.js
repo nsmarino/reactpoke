@@ -1,47 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux'
 import './App.css';
-
+// components
 import StageHandlers from './components/stageHandlers';
-import EnemyStatus from './components/EnemyStatus'
-import EnemySprite from './components/EnemySprite'
-import PlayerSprite from './components/PlayerSprite'
-import PlayerStatus from './components/PlayerStatus'
-import TextBox from './components/TextBox'
-
-import NewTextBox from './components/NewTextBox'
-import ActionTest from './components/ActionTest'
-
-import ContainerDiv from './styles/ContainerDiv'
-
-import {
-  enemyAppear, 
-  enemyPresent,
-  playerDecide,
-  playerAction,
-  playerEffect,
-  enemyDecide, 
-  enemyAction, 
-  enemyEffect, 
-  victory, 
-  defeat, 
+import EnemyStatus from './components/status displays/EnemyStatus'
+import EnemySprite from './components/sprites/EnemySprite'
+import PlayerSprite from './components/sprites/PlayerSprite'
+import PlayerStatus from './components/status displays/PlayerStatus'
+// import TextBox from './components/TextBox'
+// TEST COMPONENTS
+import NewTextBox from './components/textbox/NewTextBox'
+// reducers
+import {enemyAppear, enemyPresent,playerDecide,playerAction,playerEffect,enemyDecide, enemyAction, enemyEffect, victory, defeat, 
 } from './reducers/stageReducer'
+// styles
+import ContainerDiv from './styles/ContainerDiv'
 
 function App() {
   const dispatch = useDispatch()
   const state = useSelector(state => state)
+  const stage = useSelector(state=> state.stage)
   console.log(state)
+
+  const handleThing = () => console.log('can call functions from effect hook')
+  
+  useEffect(() => {
+    handleThing()
+  }, [stage])
 
   return (
   <div className="App">
 
     <ContainerDiv>
+      <div className="animation"></div>
       <StageHandlers />
       <EnemyStatus />
       <EnemySprite />
       <PlayerSprite />
       <PlayerStatus />
-      <TextBox />
+      {/* <TextBox /> */}
       <NewTextBox />
     </ContainerDiv>
     
@@ -57,30 +54,28 @@ function App() {
         <button onClick={() => dispatch(victory())}>Player victory</button>
         <button onClick={() => dispatch(defeat())}>Player is defeated</button>
       </div>
-    <ActionTest />
   </div>
   );
 }
 
 export default App;
 
-// textHandler - idea would be an array of text strings in store.
-// array is added to programmatically.
-// clickHandler will check length of array. if there are multiple
-// strings in array it will advance index on each click. if it is
-// the last string, it will advance stage.
-// click handler would be activated, along with blinking arrow,
-// once text-scroll animation was completed
-
-// actionHandler - after player or enemy decides, the handler will
-// then run a series of probabilities and checks (against pokemon type,
-// for example) to determine whether attack hit or missed, how effective
-// it was, critical hit, etc. this action object will then be
-// added to the store with some booleans? the text handler will receive
-// from it the relevant strings to display to player. so from this i
-// know that the textHandler needs to be implemented first.
-
 
 // i feel its currently a problem how dispatches and handlers are scattered
 // among different types of components. specifically, is there a better place
 // for handling action object than the ActionBox component?
+
+// i want to refunction all the "useEffect" fake components into handlers that
+// are called by a single effect hook at the app level. this would free me of 
+// a lot of fake-react code...how then do i handle the animations?
+
+// there is only ever one animation at a time so they could all be applied
+// as class on same empty div in App component. upon animationEnd the class
+// would be removed and it would be passed to the next stage, which would 
+// fill the div with a new animation as necessary.
+
+// Next Steps:
+// ONLY change stages on click events for now (simplified for sanity)
+// Refactor "stageHandler" components into functions called by App effect hook
+// Refactor animations into classes (or style attr?) on empty div in App (S.C.?)
+// Finetune implementation of Action Handler and remove old code.

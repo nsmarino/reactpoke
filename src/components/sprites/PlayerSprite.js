@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-import spaceworld from '../assets/spaceworld.png'
+import spaceworld from '../../assets/spaceworld.png'
 
 const PlayerSpriteImg = styled.img.attrs(props => ({
   spritePosition: props.spritePosition,

@@ -5,9 +5,9 @@ import Health from './Health'
 import XP from './XP'
 import Connector from './Connector'
 
-import PokeHeader from '../styles/PokeHeader'
-import HPBarDiv from '../styles/HPBarDiv'
-import HPNumeric from '../styles/HPNumeric'
+import PokeHeader from '../../styles/PokeHeader'
+import HPBarDiv from '../../styles/HPBarDiv'
+import HPNumeric from '../../styles/HPNumeric'
 
 const PlayerStatusDiv = styled.div`
   position: absolute;

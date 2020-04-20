@@ -7,92 +7,87 @@ body {
   margin-top: 2em;
 }
 
-/* animations should be in styled components once i figure out how to do that */
-/* .enemyPresent {
-  animation: enemyPresent 2s linear;
-} */
-
 .fader {
   animation: fadeOut 2s linear infinite;
 }
 
-  @keyframes fadeOut {
-    from {
-      filter: brightness(100%);
-      opacity: 1;
-    }
-
-    to {
-      filter: brightness(300%);
-      opacity: 0.5;
-    }
+@keyframes fadeOut {
+  from {
+    filter: brightness(100%);
+    opacity: 1;
   }
 
-  .slide {
-    filter: contrast(150%) grayscale(100%);
-    animation: slideIn 3s linear;
+  to {
+    filter: brightness(300%);
+    opacity: 0.5;
+  }
+}
+
+.slide {
+  filter: contrast(150%) grayscale(100%);
+  animation: slideIn 3s linear;
+}
+
+@keyframes slideIn {
+  from {
+    left: 0em;
   }
 
-  @keyframes slideIn {
-    from {
-      left: 0em;
-    }
+  to {
+    left: 15em;
+  }   
+}
+
+.blinker {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+}
+
+@keyframes action {
+  from {
+    left: 5em;
+    top: 15em;
+  }
+
+  to {
+    left: 15em;
+    top: 5em;
+  }
+}
+
+@keyframes enemyAction {
+  from {
+    left: 15em;
+    top: 5em;
+  }
+
+  to {
+    left: 5em;
+    top: 15em;
+  }
+}
   
-    to {
-      left: 15em;
-    }   
-  }
 
-  .blinker {
-    animation: blinker 2s linear infinite;
-  }
-
-  @keyframes blinker {
-    49% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    99% {
-      opacity: 0;
-    }
-  }
-
-  @keyframes action {
-    from {
-      left: 5em;
-      top: 15em;
-    }
-  
-    to {
-      left: 15em;
-      top: 5em;
-    }
-  }
-
-  @keyframes enemyAction {
-    from {
-      left: 15em;
-      top: 5em;
-    }
-  
-    to {
-      left: 5em;
-      top: 15em;
-    }
-  }
-  
-
-  .testBtns {
-    margin-top: 8em;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 18em;
+.testBtns {
+  margin-top: 8em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 18em;
 }
 
 .testBtns * {
-    padding: 1em;
-    width: 10em;
+  padding: 1em;
+  width: 10em;
 }

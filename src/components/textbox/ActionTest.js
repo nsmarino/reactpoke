@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 // reducers
-import { playerAction } from '../reducers/stageReducer'
-import { setPlayerAction } from '../reducers/actionReducer'
-import { newTextArray } from '../reducers/textArrayReducer'
+import { playerAction } from '../../reducers/stageReducer'
+import { setPlayerAction } from '../../reducers/actionReducer'
+import { newTextArray } from '../../reducers/textArrayReducer'
 // utils
-import roll from '../utils/roll'
+import roll from '../../utils/roll'
 // styles
 const TopMenuDiv = styled.div`
 width: 15em;

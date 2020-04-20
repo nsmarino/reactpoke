@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 // reducers
-import { playerDecide, } from '../reducers/stageReducer'
+import { playerDecide, } from '../../reducers/stageReducer'
 // import { newTextArray } from '../reducers/textArrayReducer'
 //components
 import ActionTest from './ActionTest'
@@ -20,7 +20,7 @@ const TextBoxDiv = styled.div`
   display: flex;
   position: absolute;
   left: 0em;
-  top: 25em;
+  top: 18em;
 `
 
 const NewTextBox = () => {

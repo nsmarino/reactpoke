@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 import Health from './Health'
-import PokeHeader from '../styles/PokeHeader'
-import HPBarDiv from '../styles/HPBarDiv'
+import PokeHeader from '../../styles/PokeHeader'
+import HPBarDiv from '../../styles/HPBarDiv'
 
 const EnemyStatusDiv = styled.div`
   position: absolute;
