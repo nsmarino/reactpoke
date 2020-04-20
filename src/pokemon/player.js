@@ -19,6 +19,7 @@ const PlayerDoc = {
         {
             title:'Vine Whip',
             damage: 20,
+            newAnimation:'position:relative; z-index:100; width:100px; height:100px; background:green; animation:action 2s linear;',
             animation: {
                 width: '50px', 
                 height: '50px', 
@@ -38,6 +39,7 @@ const PlayerDoc = {
         {
             title: 'Razor Leaf',
             damage: 40,
+            newAnimation:'position:relative; z-index:100; width:100px; height:100px; background:green; animation:action 2s linear;',
             animation: {
                 width: '50px', 
                 height: '50px', 

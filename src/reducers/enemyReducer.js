@@ -1,4 +1,4 @@
-import enemy from '../documents/EnemyDoc'
+import enemy from '../pokemon/enemy'
 
 const defaultState = enemy
 

@@ -1,4 +1,4 @@
-const defaultState = ['first string', 'second string', 'third and final string']
+const defaultState = ['']
 
 const textArrayReducer = (state = defaultState, action) => {
     switch (action.type) {

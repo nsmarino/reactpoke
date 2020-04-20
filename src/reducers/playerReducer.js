@@ -1,4 +1,4 @@
-import player from '../documents/PlayerDoc'
+import player from '../pokemon/player'
 
 const defaultState = player
 

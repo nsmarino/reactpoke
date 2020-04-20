@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 // reducers
-import { playerDecide, playerEffect, enemyDecide, enemyAction, enemyEffect } from '../../reducers/stageReducer'
+import { enemyPresent, playerDecide, playerEffect, enemyDecide, enemyAction, enemyEffect } from '../../reducers/stageReducer'
 //components
 import ActionTest from './ActionTest'
 
@@ -39,6 +39,7 @@ const NewTextBox = () => {
       setCounter(0)
 
       const stageAfter = {
+        enemyAppear: () => dispatch(enemyPresent()), 
         enemyPresent: () => dispatch(playerDecide()),
         playerDecide: () => null,
         playerAction: () => dispatch(playerEffect()),
@@ -46,6 +47,9 @@ const NewTextBox = () => {
         enemyDecide: () => dispatch(enemyAction()),
         enemyAction: () => dispatch(enemyEffect()),
         enemyEffect: () => dispatch(playerDecide()),
+        victory: () => null,
+        defeat: () => null,
+        rewards: () => null,
       }
       return stageAfter[currentStage]()
     }
