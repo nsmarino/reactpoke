@@ -10,6 +10,7 @@ import { newTextArray } from '../../reducers/textArrayReducer'
 import roll from '../../utils/roll'
 // styles
 const TopMenuDiv = styled.div`
+font-family: pokemonFont;
 width: 15em;
 height: calc(100%);
 margin: -4px -4px 0px 0px;
@@ -27,6 +28,7 @@ background-color: white;
 }
 `
 const FightMenuDiv = styled.div`
+font-family: pokemonFont;
 width: 15em;
 height: calc(100%);
 margin: -4px -4px 0px 0px;
@@ -46,6 +48,7 @@ background-color: white;
 
 `
 const ActionButton = styled.button`
+  font-family: pokemonFont;
   border: 0;
   padding: 0;
   font-size: 1.1em;

@@ -1,12 +1,13 @@
+// hooks:
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-// reducers
+// reducers:
 import { victory, defeat } from '../reducers/stageReducer'
 import { newTextArray } from '../reducers/textArrayReducer'
 import { updateEnemyHealth } from '../reducers/enemyReducer'
 import { updatePlayerHealth } from '../reducers/playerReducer'
 import { setEnemyAction } from '../reducers/actionReducer'
-// //utils
+// utils:
 import roll from '../utils/roll'
 
 const useStageHandler = () => {
@@ -17,11 +18,12 @@ const useStageHandler = () => {
   const player = useSelector(state=> state.player)
   const enemy = useSelector(state=> state.enemy)
   const action = useSelector(state => state.action)
-
+  // empty div used for attack animations:
   const animationDiv = document.querySelector('.animation')
-  console.log(animationDiv)
 
   useEffect(() => {
+    // Less complicated than it appears: each time the 'stage'
+    // changes in redux store, the appropriate code block fires
     if (stage==='enemyAppear') {
         const handleAppearEnd = (sprite) => {
           sprite.classList.remove('slide')
@@ -38,6 +40,7 @@ const useStageHandler = () => {
       dispatch(newTextArray([`What should ${player.name} do?`]))
     }
     if (stage==='playerAction') {
+      // Adding Probability?
       // const rolled = roll()
       // if (rolled < 95) setAttackHit(true)
       // if (rolled > 95) {
@@ -51,8 +54,9 @@ const useStageHandler = () => {
         animationDiv.setAttribute('style', '')
         console.log('animation has ended')
       }
-
       dispatch(newTextArray([`${player.name} used ${action.title}`]))
+      // adds a style attribute to div with animation from player object
+      // to be removed at end of animation (can also trigger next stage)
       animationDiv.setAttribute('style', action.newAnimation)
       animationDiv.addEventListener('animationend', handleAnimationEnd)
     }

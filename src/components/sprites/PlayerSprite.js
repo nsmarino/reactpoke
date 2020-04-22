@@ -2,13 +2,14 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-import spaceworld from '../../assets/spaceworld.png'
+import pokemonSprites from '../../assets/pokemonSprites.png'
 
 const PlayerSpriteImg = styled.img.attrs(props => ({
   spritePosition: props.spritePosition,
 }))`
   object-fit: none;
   object-position: ${props=>props.spritePosition};
+  background-size
   width: 100px;
   height: 100px;
   position: absolute;
@@ -21,7 +22,7 @@ const PlayerSprite = () => {
 
   return (
     <PlayerSpriteImg 
-      src={spaceworld} 
+      src={pokemonSprites} 
       alt={`${player.name}`} 
       spritePosition={player.spritePosition}
     />

@@ -1,20 +1,21 @@
-import spaceworld from '../assets/spaceworld.png'
+// import spaceworld from '../assets/spaceworld.png'
+// import pokemonSprites from '../assets/pokemonSprites.png'
 
 const PlayerDoc = {
-    name: 'Bulbasaur',
+    name: 'Totodile',
     health: 100,
     currentHealth: 100,
     level: 10,
     xp: 25,
     speed: 20,
     gender: '♂',
-    spritePosition: '-35px -45px',
-    sprite: {
-        width: '100px',
-        height: '100px',
-        background: `url(${spaceworld})`,
-        backgroundPosition: '-35px -45px',
-    },
+    spritePosition: '-55px -45px',
+    // sprite: {
+    //     width: '100px',
+    //     height: '100px',
+    //     background: `url(${pokemonSprites})`,
+    //     backgroundPosition: '-35px -45px',
+    // },
     moveset: [
         {
             title:'Vine Whip',

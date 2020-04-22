@@ -1,4 +1,4 @@
-import spaceworld from '../assets/spaceworld.png'
+import chikoritaFront from '../assets/chikoritaFront.png'
 
 const enemyDoc = {
     name: 'Charmander',
@@ -9,12 +9,7 @@ const enemyDoc = {
     speed: 10,
     gender: '♂',
     spritePosition: '-900px -45px',
-    sprite: {
-        width: '100px',
-        height: '100px',
-        background: `url(${spaceworld})`,
-        backgroundPosition: `-900px -45px`,
-    },
+    spriteFront: chikoritaFront,
     moveset: [
         {
             title: 'Fireball',

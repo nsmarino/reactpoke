@@ -5,12 +5,11 @@ const HPBarDiv = styled.div`
   > h2 {
     font-size: .75em;
     padding-left: .25em;
-    font-family: fantasy;
     font-weight: normal;
     color: goldenrod;
     background: black;
     margin: 0em; 
-    width: 2em;
+    width: 2.5em;
   }
   > .bar {
     display: flex;

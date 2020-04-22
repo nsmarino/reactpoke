@@ -14,7 +14,7 @@ const TextBoxDiv = styled.div`
   border-radius: .25em;
   height: 7em;
   width: 25em;
-  font-family: monospace;
+  font-family: pokemonFont;
   background-color: whitesmoke;
   display: flex;
   position: absolute;

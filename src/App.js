@@ -72,3 +72,14 @@ export default App;
 // 1.Finetune implementation of Action Handler
 // 2. finetune action reducer ( currently both playerAction and enemyAction occupy
 // the same slot -- should they?)
+
+// add scrolling text and correct font
+// model app on first battle of pokemon silver
+// appropriate stage-changes
+// cosmetics
+// refactoring of useStageHandler hook
+// review all code for cleanliness and brevity
+
+
+// spritesheets via spriters-resource
+// font via https://www.dafont.com/pkmn-rbygsc.font
