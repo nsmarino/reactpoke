@@ -1,25 +1,19 @@
-// import spaceworld from '../assets/spaceworld.png'
-// import pokemonSprites from '../assets/pokemonSprites.png'
+import totodileBack from '../assets/totodileBack.png'
 
 const PlayerDoc = {
     name: 'Totodile',
-    health: 100,
-    currentHealth: 100,
-    level: 10,
+    health: 28,
+    currentHealth: 28,
+    level: 7,
     xp: 25,
+    xpNeeded: 120,
     speed: 20,
     gender: '♂',
-    spritePosition: '-55px -45px',
-    // sprite: {
-    //     width: '100px',
-    //     height: '100px',
-    //     background: `url(${pokemonSprites})`,
-    //     backgroundPosition: '-35px -45px',
-    // },
+    spriteBack: totodileBack,
     moveset: [
         {
-            title:'Vine Whip',
-            damage: 20,
+            title:'Scratch',
+            damage: 10,
             newAnimation:'position:relative; z-index:100; width:100px; height:100px; background:green; animation:action 2s linear;',
             animation: {
                 width: '50px', 
@@ -38,8 +32,8 @@ const PlayerDoc = {
               }
         },
         {
-            title: 'Razor Leaf',
-            damage: 40,
+            title: 'Leer',
+            damage: 0,
             newAnimation:'position:relative; z-index:100; width:100px; height:100px; background:green; animation:action 2s linear;',
             animation: {
                 width: '50px', 

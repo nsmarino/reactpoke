@@ -27,11 +27,14 @@ const StyledXP = styled.div.attrs(props => ({
 
 const XP = ({pokemon}) => {
 
+  const percentXP = (pokemon.xp * 100) / pokemon.xpNeeded
+
+
   return (
     <div style={{display: 'flex', alignItems: 'flex-end'}}>
       <Triangle shape='10px 18px 0px 0px' />
       <XPContainer>
-        <StyledXP width={pokemon.xp} />
+        <StyledXP width={percentXP} />
       </XPContainer>
     </div>
   )

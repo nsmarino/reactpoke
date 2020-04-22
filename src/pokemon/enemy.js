@@ -1,19 +1,18 @@
 import chikoritaFront from '../assets/chikoritaFront.png'
 
 const enemyDoc = {
-    name: 'Charmander',
-    health: 100,
-    currentHealth: 100,
-    level: 8,
-    xpGiven: 20,
+    name: 'CHIKORITA',
+    health: 15,
+    currentHealth: 15,
+    level: 5,
+    xpGiven: 67,
     speed: 10,
     gender: '♂',
-    spritePosition: '-900px -45px',
     spriteFront: chikoritaFront,
     moveset: [
         {
-            title: 'Fireball',
-            damage: 10,            
+            title: 'GROWL',
+            damage: 0,            
             animation: {
                 width: '50px', 
                 height: '50px', 
@@ -32,8 +31,8 @@ const enemyDoc = {
               }
         },
         {
-            title: 'Ember',
-            damage: 20,            
+            title: 'TACKLE',
+            damage: 5,            
             animation: {
                 width: '50px', 
                 height: '50px', 
